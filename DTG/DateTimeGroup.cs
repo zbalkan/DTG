@@ -38,7 +38,7 @@ namespace DTG
         
         public override string ToString()
         {
-            return $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation}{MonthCode}{YearCode}";
+            return $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation} {MonthCode} {YearCode}";
         }
     }
 }
