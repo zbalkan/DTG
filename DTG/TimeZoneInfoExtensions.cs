@@ -12,8 +12,7 @@ namespace DTG
 
         public static TimeZoneInfo FromMilTimeZone(this TimeZoneInfo timeZoneInfo, MilitaryTimeZone milTimeZone)
         {
-            var temp = TimeZoneInfo.GetSystemTimeZones().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == milTimeZone.Offset);
-            timeZoneInfo = temp;
+            timeZoneInfo = TimeZoneInfo.GetSystemTimeZones().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == milTimeZone.Offset);
             return timeZoneInfo;
         }
     }
