@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace DTG
 {
+    [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Local")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Local")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
     public class DateTimeGroup
     {
         public DateTimeGroup(DateTime dateTime, TimeZoneInfo timeZoneInfo)
@@ -27,19 +33,19 @@ namespace DTG
             MilitaryTimeZone = timeZoneInfo.ToMilTimeZone();
         }
 
-        public string DayCode { get; }
-        public string HourCode { get; }
-        public string MinuteCode { get; }
-        public string MonthCode { get; }
-        public string YearCode { get; }
-        public int Day { get; }
-        public int Hour { get; }
-        public int Minute { get; }
-        public int Month { get; }
-        public int Year { get; }
-        public MilitaryTimeZone MilitaryTimeZone { get; }
-        public DateTime DateTime { get; }
-        public TimeZoneInfo TimeZoneInfo { get; set; }
+        public string DayCode { get; private set; }
+        public string HourCode { get; private set; }
+        public string MinuteCode { get; private set;}
+        public string MonthCode { get; private set;}
+        public string YearCode { get; private set;}
+        public int Day { get; private set;}
+        public int Hour { get; private set;}
+        public int Minute { get; private set;}
+        public int Month { get; private set;}
+        public int Year { get; private set;}
+        public MilitaryTimeZone MilitaryTimeZone { get; private set;}
+        public DateTime DateTime { get; private set;}
+        public TimeZoneInfo TimeZoneInfo { get; private set; }
 
         public override string ToString() =>
             $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation} {MonthCode} {YearCode}";
