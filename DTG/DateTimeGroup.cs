@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace DTG
 {
@@ -28,11 +29,11 @@ namespace DTG
             Year = dateTime.Year;
 
             // Formatted values
-            DayCode = dateTime.ToString("dd");
-            HourCode = dateTime.ToString("HH");
-            MinuteCode = dateTime.ToString("mm");
-            MonthCode = dateTime.ToString("MMM").ToUpperInvariant();
-            YearCode = dateTime.ToString("yy");
+            DayCode = dateTime.ToString("dd", CultureInfo.InvariantCulture);
+            HourCode = dateTime.ToString("HH", CultureInfo.InvariantCulture);
+            MinuteCode = dateTime.ToString("mm", CultureInfo.InvariantCulture);
+            MonthCode = dateTime.ToString("MMM", CultureInfo.InvariantCulture).ToUpperInvariant();
+            YearCode = dateTime.ToString("yy", CultureInfo.InvariantCulture);
 
             // Calculated values
             MilitaryTimeZone = timeZoneInfo.ToMilTimeZone();
