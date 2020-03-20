@@ -15,6 +15,8 @@ namespace DTG
         public int Month { get; }
         public int Year { get; }
         public MilitaryTimeZone MilitaryTimeZone { get; }
+        public DateTime DateTime { get; }
+        public TimeZoneInfo TimeZoneInfo { get; set; }
 
         public DateTimeGroup(DateTime dateTime, TimeZoneInfo timeZoneInfo)
         {
@@ -35,7 +37,7 @@ namespace DTG
             // Calculated values
             MilitaryTimeZone = timeZoneInfo.ToMilTimeZone();
         }
-        
+
         public override string ToString()
         {
             return $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation} {MonthCode} {YearCode}";
