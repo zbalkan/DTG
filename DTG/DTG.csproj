@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <Version>1.0.1</Version>
+    <Authors>Zafer Balkan</Authors>
+    <Description>A basic military date time group implementation for C#</Description>
+    <Copyright>© Zafer Balkan</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
