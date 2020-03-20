@@ -5,22 +5,10 @@ namespace DTG
 {
     public class DateTimeGroup
     {
-        public string DayCode { get; }
-        public string HourCode { get; }
-        public string MinuteCode { get; }
-        public string MonthCode { get; }
-        public string YearCode { get; }
-        public int Day { get; }
-        public int Hour { get; }
-        public int Minute { get; }
-        public int Month { get; }
-        public int Year { get; }
-        public MilitaryTimeZone MilitaryTimeZone { get; }
-        public DateTime DateTime { get; }
-        public TimeZoneInfo TimeZoneInfo { get; set; }
-
         public DateTimeGroup(DateTime dateTime, TimeZoneInfo timeZoneInfo)
         {
+            if (timeZoneInfo == null) throw new ArgumentNullException(nameof(timeZoneInfo));
+            
             // Original values
             Day = dateTime.Day;
             Hour = dateTime.Hour;
@@ -39,9 +27,21 @@ namespace DTG
             MilitaryTimeZone = timeZoneInfo.ToMilTimeZone();
         }
 
-        public override string ToString()
-        {
-            return $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation} {MonthCode} {YearCode}";
-        }
+        public string DayCode { get; }
+        public string HourCode { get; }
+        public string MinuteCode { get; }
+        public string MonthCode { get; }
+        public string YearCode { get; }
+        public int Day { get; }
+        public int Hour { get; }
+        public int Minute { get; }
+        public int Month { get; }
+        public int Year { get; }
+        public MilitaryTimeZone MilitaryTimeZone { get; }
+        public DateTime DateTime { get; }
+        public TimeZoneInfo TimeZoneInfo { get; set; }
+
+        public override string ToString() =>
+            $"{DayCode}{HourCode}{MinuteCode}{MilitaryTimeZone.Abbreviation} {MonthCode} {YearCode}";
     }
 }
