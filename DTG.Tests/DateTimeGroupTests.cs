@@ -42,30 +42,42 @@ namespace DTG.Tests
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneAbbreviationTest(string name, string abbr, int offset)
+        public void TimeZoneAbbreviationTest(string abbr, int offset)
         {
-            var dtg = new DateTimeGroup(DateTime.Now,
-                TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset));
+            var dtg = new DateTimeGroup()
+            {
+                DateTime = DateTime.Now,
+                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+            };
+
             var actual = dtg.MilitaryTimeZone.Abbreviation;
             Assert.AreEqual(abbr, actual);
         }
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneNameTest(string name, string abbr, int offset)
+        public void TimeZoneNameTest(string name, int offset)
         {
-            var dtg = new DateTimeGroup(DateTime.Now,
-                TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset));
+            var dtg = new DateTimeGroup()
+            {
+                DateTime = DateTime.Now,
+                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+            };
+
             var actual = dtg.MilitaryTimeZone.TimeZoneName;
             Assert.AreEqual(name, actual);
         }
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneOffsetTest(string name, string abbr, int offset)
+        public void TimeZoneOffsetTest(int offset)
         {
-            var dtg = new DateTimeGroup(DateTime.Now,
-                TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset));
+            var dtg = new DateTimeGroup()
+            {
+                DateTime = DateTime.Now,
+                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+            };
+
             var actual = dtg.MilitaryTimeZone.Offset;
             Assert.AreEqual(offset, actual);
         }
