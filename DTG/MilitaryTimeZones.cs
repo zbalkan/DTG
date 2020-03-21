@@ -22,7 +22,7 @@ namespace DTG
 
         public static MilitaryTimeZone? GetByAbbreviation(string abbreviation)
         {
-            return TimeZones.FirstOrDefault(tz => tz.Abbreviation.Equals(abbreviation, System.StringComparison.InvariantCultureIgnoreCase);
+            return TimeZones.FirstOrDefault(tz => tz.Abbreviation.Equals(abbreviation, System.StringComparison.InvariantCultureIgnoreCase));
         }
 
 
