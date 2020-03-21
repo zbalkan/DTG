@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTG", "DTG\DTG.csproj", "{488CFE39-2378-4024-AE83-EC30E747B2A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTG", "DTG\DTG.csproj", "{488CFE39-2378-4024-AE83-EC30E747B2A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTG.Tests", "DTG.Tests\DTG.Tests.csproj", "{3084A3A7-762D-47D8-A8D2-862F705828AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTG.Tests", "DTG.Tests\DTG.Tests.csproj", "{3084A3A7-762D-47D8-A8D2-862F705828AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
