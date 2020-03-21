@@ -8,7 +8,7 @@ namespace DTG
         public static MilitaryTimeZone ToMilTimeZone(this TimeZoneInfo timeZoneInfo)
         {
             if (timeZoneInfo == null) throw new ArgumentNullException(nameof(timeZoneInfo));
-            return MilitaryTimeZones.TimeZones.FirstOrDefault(tz => tz.Offset == timeZoneInfo.BaseUtcOffset.Hours);
+            return MilitaryTimeZones.GetByOffset(timeZoneInfo.BaseUtcOffset.Hours);
         }
 
         public static TimeZoneInfo FromMilTimeZone(this TimeZoneInfo timeZoneInfo, MilitaryTimeZone milTimeZone)
