@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace DTG
 {
@@ -7,6 +9,22 @@ namespace DTG
     {
         public static IEnumerable<MilitaryTimeZone> TimeZones =>
             new ReadOnlyCollection<MilitaryTimeZone>(GetTimeZoneList());
+
+        public static MilitaryTimeZone? GetByOffset(int offset)
+        {
+            return TimeZones.FirstOrDefault(tz => tz.Offset == offset);
+        }
+
+        public static MilitaryTimeZone? GetByName(string name)
+        {
+            return TimeZones.FirstOrDefault(tz => tz.TimeZoneName.Equals(name, System.StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        public static MilitaryTimeZone? GetByAbbreviation(string abbreviation)
+        {
+            return TimeZones.FirstOrDefault(tz => tz.Abbreviation.Equals(abbreviation, System.StringComparison.InvariantCultureIgnoreCase);
+        }
+
 
         private static List<MilitaryTimeZone> GetTimeZoneList() =>
             new List<MilitaryTimeZone>
