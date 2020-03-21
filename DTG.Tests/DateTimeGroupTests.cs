@@ -42,12 +42,12 @@ namespace DTG.Tests
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneAbbreviationTest(string abbr, int offset)
+        public void TimeZoneAbbreviationTest(string name, string abbr, int offset)
         {
             var dtg = new DateTimeGroup()
             {
                 DateTime = DateTime.Now,
-                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+                TimeZoneOffset = offset
             };
 
             var actual = dtg.MilitaryTimeZone.Abbreviation;
@@ -56,12 +56,12 @@ namespace DTG.Tests
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneNameTest(string name, int offset)
+        public void TimeZoneNameTest(string name, string abbr, int offset)
         {
             var dtg = new DateTimeGroup()
             {
                 DateTime = DateTime.Now,
-                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+                TimeZoneOffset = offset
             };
 
             var actual = dtg.MilitaryTimeZone.TimeZoneName;
@@ -70,12 +70,12 @@ namespace DTG.Tests
 
         [DataTestMethod]
         [DynamicData(nameof(Data))]
-        public void TimeZoneOffsetTest(int offset)
+        public void TimeZoneOffsetTest(string name, string abbr, int offset)
         {
             var dtg = new DateTimeGroup()
             {
                 DateTime = DateTime.Now,
-                TimeZoneInfo = TimeZoneInfo.GetSystemTimeZones().ToList().FirstOrDefault(tz => tz.BaseUtcOffset.Hours == offset)
+                TimeZoneOffset = offset
             };
 
             var actual = dtg.MilitaryTimeZone.Offset;
