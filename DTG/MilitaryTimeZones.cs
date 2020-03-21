@@ -17,7 +17,7 @@ namespace DTG
 
         public static MilitaryTimeZone? GetByName(string name)
         {
-            return TimeZones.FirstOrDefault(tz => tz.TimeZoneName.Equals(name, System.StringComparison.InvariantCultureIgnoreCase);
+            return TimeZones.FirstOrDefault(tz => tz.TimeZoneName.Equals(name, System.StringComparison.InvariantCultureIgnoreCase));
         }
 
         public static MilitaryTimeZone? GetByAbbreviation(string abbreviation)
