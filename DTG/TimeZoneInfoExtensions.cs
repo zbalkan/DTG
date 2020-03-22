@@ -16,7 +16,7 @@ namespace DTG
             if (timeZoneInfo == null) throw new ArgumentNullException(nameof(timeZoneInfo));
             if (milTimeZone == null) throw new ArgumentNullException(nameof(milTimeZone));
             timeZoneInfo = TimeZoneInfo.GetSystemTimeZones()
-                .FirstOrDefault(tz => tz.BaseUtcOffset.Hours == milTimeZone.Offset);
+                .FirstOrDefault(tz => tz.BaseUtcOffset.Hours == milTimeZone.Offset && tz.BaseUtcOffset.Minutes == 0);
             return timeZoneInfo;
         }
     }
