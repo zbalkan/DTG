@@ -1,10 +1,13 @@
 ﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace DTG
 {
+    [ComplexType]
     public static class MilitaryTimeZones
     {
         public static IEnumerable<MilitaryTimeZone> TimeZones =>
@@ -17,12 +20,14 @@ namespace DTG
 
         public static MilitaryTimeZone? GetByName(string name)
         {
-            return TimeZones.FirstOrDefault(tz => tz.TimeZoneName.Equals(name, System.StringComparison.InvariantCultureIgnoreCase));
+            return TimeZones.FirstOrDefault(tz =>
+                tz.TimeZoneName.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public static MilitaryTimeZone? GetByAbbreviation(string abbreviation)
         {
-            return TimeZones.FirstOrDefault(tz => tz.Abbreviation.Equals(abbreviation, System.StringComparison.InvariantCultureIgnoreCase));
+            return TimeZones.FirstOrDefault(tz =>
+                tz.Abbreviation.Equals(abbreviation, StringComparison.InvariantCultureIgnoreCase));
         }
 
 
