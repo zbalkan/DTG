@@ -1,8 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DTG
+﻿namespace DTG
 {
-    [ComplexType]
     public sealed class MilitaryTimeZone
     {
         public string TimeZoneName { get; set; }

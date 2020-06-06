@@ -1,30 +1,27 @@
-﻿#nullable enable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace DTG
 {
-    [ComplexType]
     public static class MilitaryTimeZones
     {
         public static IEnumerable<MilitaryTimeZone> TimeZones =>
             new ReadOnlyCollection<MilitaryTimeZone>(GetTimeZoneList());
 
-        public static MilitaryTimeZone? GetByOffset(int offset)
+        public static MilitaryTimeZone GetByOffset(int offset)
         {
             return TimeZones.FirstOrDefault(tz => tz.Offset == offset);
         }
 
-        public static MilitaryTimeZone? GetByName(string name)
+        public static MilitaryTimeZone GetByName(string name)
         {
             return TimeZones.FirstOrDefault(tz =>
                 tz.TimeZoneName.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public static MilitaryTimeZone? GetByAbbreviation(string abbreviation)
+        public static MilitaryTimeZone GetByAbbreviation(string abbreviation)
         {
             return TimeZones.FirstOrDefault(tz =>
                 tz.Abbreviation.Equals(abbreviation, StringComparison.InvariantCultureIgnoreCase));

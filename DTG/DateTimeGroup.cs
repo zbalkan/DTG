@@ -1,11 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
 
 namespace DTG
 {
-    [ComplexType]
     public class DateTimeGroup
     {
         private TimeZoneInfo _timeZoneInfo;
